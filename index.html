@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Bem-vindo - Personal Trainer</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #c7c7c7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 320px;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.container a.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.container a.btn:hover {
+  background: #0056b3;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Bem-vindo Personal</h1>
+  <p>Digite seu nome:</p>
+  <input type="text" id="nomePersonal" placeholder="Nome do Personal" required>
+  <!-- O link redireciona para outro HTML local -->
+  <a class="btn" href="treino.html" onclick="return validarNome();">Continuar</a>
+</div>
+
+<script>
+function validarNome() {
+  const nome = document.getElementById('nomePersonal').value.trim();
+  if(!nome) {
+    alert('Por favor, digite seu nome!');
+    return false; // impede o redirecionamento
+  }
+  // opcional: armazenar nome no localStorage para usar na próxima página
+  localStorage.setItem('nomePersonal', nome);
+  return true; // permite o redirecionamento
+}
+</script>
+
+</body>
+</html>

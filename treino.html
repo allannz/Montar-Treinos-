@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de Treinos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1 id="saudacao"></h1>
+
+<style>
+#saudacao {
+  text-align: center;
+  font-size: 28px;
+  color: #007bff;
+  margin: 20px 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  font-family: 'Arial', sans-serif;
+}
+</style>
+
+<script>
+  const nomePersonal = localStorage.getItem('nomePersonal') || '';
+  
+  if(nomePersonal) {
+    document.getElementById('saudacao').innerText = `Olá, ${nomePersonal}!`;
+  } else {
+    document.getElementById('saudacao').innerText = 'Olá!';
+  }
+</script>
+
+
+  <h2>Monte seu Treino:</h2>
+
+  <form id="form-treino">
+    <label for="nomeTreino">Treino:</label>
+    <select id="nomeTreino" required>
+      <option value="A">Treino A</option>
+      <option value="B">Treino B</option>
+      <option value="C">Treino C</option>
+      <option value="D">Treino D</option>
+      <option value="E">Treino E</option>
+      <option value="F">Treino F</option>
+      <option value="G">Treino G</option>
+    </select>
+
+    <label for="exercicio">Exercício:</label>
+    <select id="exercicio" required>
+      <option value="">-- Selecione --</option>
+      <!-- Peito -->
+      <option value="Supino Reto">Supino Reto</option>
+      <option value="Supino Inclinado">Supino Inclinado</option>
+      <option value="Supino Declinado">Supino Declinado</option>
+      <option value="Crucifixo Reto">Crucifixo Reto</option>
+      <option value="Crucifixo Inclinado">Crucifixo Inclinado</option>
+      <option value="Peck Deck">Peck Deck</option>
+      <option value="Cross Over">Cross Over</option>
+      <!-- Costas -->
+      <option value="Puxada Aberta Frente">Puxada Aberta Frente</option>
+      <option value="Puxada Atrás">Puxada Atrás</option>
+      <option value="Remada Curvada">Remada Curvada</option>
+      <option value="Remada Baixa">Remada Baixa</option>
+      <option value="Remada Unilateral">Remada Unilateral</option>
+      <option value="Levantamento Terra">Levantamento Terra</option>
+      <option value="Pull Over">Pull Over</option>
+      <!-- Ombros -->
+      <option value="Desenvolvimento com Barra">Desenvolvimento com Barra</option>
+      <option value="Desenvolvimento com Halteres">Desenvolvimento com Halteres</option>
+      <option value="Elevação Lateral">Elevação Lateral</option>
+      <option value="Elevação Frontal">Elevação Frontal</option>
+      <option value="Encolhimento de Ombros">Encolhimento de Ombros</option>
+      <option value="Remada Alta">Remada Alta</option>
+      <!-- Pernas -->
+      <option value="Agachamento Livre">Agachamento Livre</option>
+      <option value="Agachamento Smith">Agachamento Smith</option>
+      <option value="Leg Press">Leg Press</option>
+      <option value="Avanço">Avanço</option>
+      <option value="Passada">Passada</option>
+      <option value="Cadeira Extensora">Cadeira Extensora</option>
+      <option value="Cadeira Flexora">Cadeira Flexora</option>
+      <option value="Mesa Flexora">Mesa Flexora</option>
+      <option value="Cadeira Abdutora">Cadeira Abdutora</option>
+      <option value="Cadeira Adutora">Cadeira Adutora</option>
+      <option value="Stiff">Stiff</option>
+      <option value="Levantamento Terra Romeno">Levantamento Terra Romeno</option>
+      <option value="Panturrilha Sentado">Panturrilha Sentado</option>
+      <option value="Panturrilha em Pé">Panturrilha em Pé</option>
+      <!-- Bíceps -->
+      <option value="Rosca Direta">Rosca Direta</option>
+      <option value="Rosca Alternada">Rosca Alternada</option>
+      <option value="Rosca Martelo">Rosca Martelo</option>
+      <option value="Rosca Concentrada">Rosca Concentrada</option>
+      <option value="Rosca Scott">Rosca Scott</option>
+      <!-- Tríceps -->
+      <option value="Tríceps Corda">Tríceps Corda</option>
+      <option value="Tríceps Testa">Tríceps Testa</option>
+      <option value="Tríceps Francês">Tríceps Francês</option>
+      <option value="Mergulho">Mergulho</option>
+      <option value="Tríceps Banco">Tríceps Banco</option>
+      <!-- Abdômen -->
+      <option value="Abdominal Supra">Abdominal Supra</option>
+      <option value="Abdominal Infra">Abdominal Infra</option>
+      <option value="Abdominal Oblíquo">Abdominal Oblíquo</option>
+      <option value="Prancha">Prancha</option>
+      <option value="Elevação de Pernas">Elevação de Pernas</option>
+      <option value="Ab Wheel (Roda)">Ab Wheel (Roda)</option>
+    </select>
+
+    <label for="series">Séries:</label>
+    <input type="number" id="series" min="1" value="3" required>
+
+    <label for="repeticoes">Repetições:</label>
+    <input type="number" id="repeticoes" min="1" value="12" required>
+
+    <button type="submit" class="btn">Adicionar</button>
+  </form>
+
+  <!-- Área que vai conter várias tabelas (uma por treino) -->
+  <div id="treinos"></div>
+
+  <button class="btn" id="btnPDF">Gerar PDF</button>
+
+  <!-- Libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
