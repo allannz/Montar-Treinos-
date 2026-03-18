@@ -85,7 +85,7 @@ function atualizarTabela(treino) {
 form.addEventListener("submit", e => {
   e.preventDefault();
   const treinoSelect = document.getElementById("nomeTreino");
-  const treino = treinoSelect.value; // mantém o valor selecionado
+  const treino = treinoSelect.value;
   const exercicio = document.getElementById("exercicio").value;
   const series = document.getElementById("series").value;
   const repeticoes = document.getElementById("repeticoes").value;
@@ -93,7 +93,6 @@ form.addEventListener("submit", e => {
   treinos[treino].push({ exercicio, series, repeticoes });
   atualizarTabela(treino);
 
-  // Resetar apenas exercícios, séries e repetições, mantendo o treino selecionado
   document.getElementById("exercicio").value = "";
   document.getElementById("series").value = "3";
   document.getElementById("repeticoes").value = "12";
@@ -105,20 +104,28 @@ btnPDF.addEventListener("click", () => {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF('p', 'mm', 'a4');
 
-// Logo
-const logo = "img/Logo.jpeg"; 
-doc.addImage(logo, "JPEG", 10, 5, 25, 25);
+  // Pegar nome do personal
+  const nomePersonal = localStorage.getItem('nomePersonal') || 'Não informado';
 
-  // Título centralizado
+  // Pegar data atual
+  const dataAtual = new Date().toLocaleDateString('pt-BR');
+
+  // Título
   doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
-  doc.text("Plano de Treino Personalizado", doc.internal.pageSize.getWidth() / 2, 20, { align: "center" });
+  doc.text("Plano de Treino Personalizado", doc.internal.pageSize.getWidth() / 2, 15, { align: "center" });
 
-  let posY = 35;
+  // Nome e data
+  doc.setFontSize(12);
+  doc.setFont("helvetica", "normal");
+  doc.text(`Instrutor: ${nomePersonal}`, 14, 22);
+  doc.text(`Data: ${dataAtual}`, 14, 28);
+
+  let posY = 40;
   const margem = 14;
-  const larguraExercicio = 110; // largura fixa para Exercício
-  const larguraSeries = 30;     // largura fixa para Séries
-  const larguraRepeticoes = 30; // largura fixa para Repetições
+  const larguraExercicio = 110;
+  const larguraSeries = 30;
+  const larguraRepeticoes = 30;
 
   Object.keys(treinos).forEach(treino => {
     if (treinos[treino].length > 0) {
