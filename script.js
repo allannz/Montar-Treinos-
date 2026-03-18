@@ -118,7 +118,7 @@ btnPDF.addEventListener("click", () => {
   // Nome e data
   doc.setFontSize(12);
   doc.setFont("helvetica", "normal");
-  doc.text(`Instrutor: ${nomePersonal}`, 14, 22);
+  doc.text(`Instrutor(a): ${nomePersonal}`, 14, 22);
   doc.text(`Data: ${dataAtual}`, 14, 28);
 
   let posY = 40;
