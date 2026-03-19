@@ -1,116 +1,123 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background: #f1f1f1;
-}
+  margin: 0;
+  font-family: Arial;
 
-h1 {
-  text-align: center;
-}
+  background:
+    linear-gradient(rgba(49, 50, 56, 0.241), rgba(49, 50, 56, 0.847)),
+    url("img/academia.jpg");
 
-form {
+  background-size: 100%; /* controla o tamanho */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed; /* deixa travada */
+
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+  flex-direction: column;
   align-items: center;
 }
 
-label {
-  font-weight: bold;
+h1 {
+  margin: 20px;
+  color: #ffffff;
 }
 
-input, select {
-  padding: 5px;
-  min-width: 120px; /* garante um tamanho mínimo em telas grandes */
+.main-container {
+  width: 90%;
+  max-width: 1200px;
 }
 
+/* CARD PADRÃO */
+.card {
+  background: #fbfdff;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+/* FORM */
+#form-treino {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.full {
+  grid-column: span 2;
+}
+
+input,
+select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* BOTÕES */
 .btn {
-  padding: 8px 12px;
-  cursor: pointer;
   background: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+
+  /* Aumentando tamanho */
+  padding: 15px 50px; /* vertical | horizontal */
+  font-size: 18px; /* aumenta o tamanho do texto */
+
+  border-radius: 100px;
+  cursor: pointer;
+
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.btn-center {
+  display: block;
+  margin: 0 auto;
 }
 
 .btn:hover {
   background: #0056b3;
 }
-
+/* TABELA */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  background: white;
-}
-
-th, td {
-  border: 1px solid #333;
-  padding: 8px;
-  text-align: center;
-  word-break: break-word; /* evita que o texto quebre a tabela */
 }
 
 th {
-  background: #007bff;
+  background: #004895;
   color: #fff;
 }
 
-table tbody tr:nth-child(even) {
-  background: #f2f2f2;
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
 }
 
+/* TREINOS */
 #treinos > div {
   margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  background: #fff;
+}
+
+/* PDF */
+#btnPDF {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-form {
-  display: flex;
-  flex-direction: column; /* campos um em cima do outro */
-  gap: 10px;              /* espaçamento entre eles */
-  margin-bottom: 20px;
-  width: 100%;             /* ocupa toda a largura disponível */
-}
-
-input, select, .btn {
-  width: 100%;             /* cada campo ocupa 100% da largura */
-  box-sizing: border-box;  /* padding não estoura a largura */
-  padding: 8px;
-}
-
-
-  th, td {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  table {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    margin: 10px;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  th, td {
-    font-size: 10px;
-    padding: 4px;
-  }
-
-  .btn {
-    padding: 6px;
+  #form-treino {
+    display: flex;
+    flex-direction: column;
   }
 }
