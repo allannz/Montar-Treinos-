@@ -58,7 +58,7 @@ function atualizarTabela(treino) {
 // =============================
 // ADICIONAR EXERCÍCIO
 // =============================
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const treino = document.getElementById("nomeTreino").value;
@@ -80,7 +80,7 @@ form.addEventListener("submit", e => {
 // =============================
 btnPDF.addEventListener("click", () => {
   const { jsPDF } = window.jspdf;
-  const doc = new jsPDF('p', 'mm', 'a4');
+  const doc = new jsPDF("p", "mm", "a4");
 
   const nome = localStorage.getItem("nomePersonal") || "Não informado";
   const data = new Date().toLocaleDateString("pt-BR");
@@ -88,7 +88,12 @@ btnPDF.addEventListener("click", () => {
   // TÍTULO
   doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
-  doc.text("Plano de Treino Personalizado", doc.internal.pageSize.getWidth() / 2, 15, { align: "center" });
+  doc.text(
+    "Plano de Treino Personalizado",
+    doc.internal.pageSize.getWidth() / 2,
+    15,
+    { align: "center" },
+  );
 
   // CABEÇALHO
   doc.setFontSize(12);
@@ -99,9 +104,8 @@ btnPDF.addEventListener("click", () => {
   let posY = 40;
   const margem = 14;
 
-  Object.keys(treinos).forEach(treino => {
+  Object.keys(treinos).forEach((treino) => {
     if (treinos[treino].length > 0) {
-
       // Nome do treino
       doc.setFontSize(14);
       doc.setFont("helvetica", "bold");
@@ -109,35 +113,35 @@ btnPDF.addEventListener("click", () => {
       posY += 5;
 
       // Dados da tabela
-      const dados = treinos[treino].map(ex => [
+      const dados = treinos[treino].map((ex) => [
         ex.exercicio,
         ex.series,
-        ex.repeticoes
+        ex.repeticoes,
       ]);
 
       // Tabela
       doc.autoTable({
-        head: [['Exercício', 'Séries', 'Repetições']],
+        head: [["Exercício", "Séries", "Repetições"]],
         body: dados,
         startY: posY,
-        theme: 'grid',
+        theme: "grid",
 
         headStyles: {
           fillColor: [0, 123, 255],
-          halign: 'center'
+          halign: "center",
         },
 
         styles: {
-          halign: 'center',
-          valign: 'middle',
-          fontSize: 11
+          halign: "center",
+          valign: "middle",
+          fontSize: 11,
         },
 
         columnStyles: {
-          0: { cellWidth: 110, halign: 'left' },
+          0: { cellWidth: 110, halign: "left" },
           1: { cellWidth: 30 },
-          2: { cellWidth: 30 }
-        }
+          2: { cellWidth: 30 },
+        },
       });
 
       posY = doc.lastAutoTable.finalY + 10;
