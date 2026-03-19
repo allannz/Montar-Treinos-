@@ -7,19 +7,25 @@
 
   <style>
 body {
+  
   margin: 0;
   font-family: Arial;
 
-  min-height: 100vh;
-
-  background: #313238; /* só cor agora */
+  min-height: 100vh; /* ocupa toda a altura da tela */
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center;     /* centraliza horizontalmente */
 
-  padding: 40px 0;
+  background: #313238;
+
+  padding: 0; /* remove padding para centralização perfeita */
+}
+
+img.logo {
+  height: 100px;
+  padding: 20px;
 }
 
 /* CONTAINER PRINCIPAL */
@@ -128,6 +134,12 @@ input {
 </head>
 
 <body>
+
+  <header>
+  <a href="index.html">
+    <img src="img/logo.png" alt="LOGO" class="logo">
+  </a>
+</header>
 
   <div class="wrapper">
 

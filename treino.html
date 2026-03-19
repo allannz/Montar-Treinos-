@@ -1,153 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<title>Gerador de Treinos</title>
 
-<link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de Treinos</title>
+
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
+<header>
+  <a href="index.html">
+    <img src="img/logo.png" alt="LOGO" class="logo">
+  </a>
+</header>
 
-<h1 id="saudacao"></h1>
+  <h1 id="saudacao"></h1>
 
-<div class="main-container">
+  <div class="main-container">
 
-  <div class="card">
-    <h2>Monte seu Treino</h2>
+    <div class="card">
+      <h2>Monte seu Treino</h2>
 
-    <form id="form-treino">
+      <form id="form-treino">
 
-      <div class="form-group">
-        <label>Treino</label>
-        <select id="nomeTreino">
-          <option value="A">Treino A</option>
-          <option value="B">Treino B</option>
-          <option value="C">Treino C</option>
-          <option value="D">Treino D</option>
-          <option value="E">Treino E</option>
-          <option value="F">Treino F</option>
-          <option value="G">Treino G</option>
-        </select>
-      </div>
+        <div class="form-group">
+          <label>Treino</label>
+          <select id="nomeTreino">
+            <option value="A">Treino A</option>
+            <option value="B">Treino B</option>
+            <option value="C">Treino C</option>
+            <option value="D">Treino D</option>
+            <option value="E">Treino E</option>
+            <option value="F">Treino F</option>
+            <option value="G">Treino G</option>
+          </select>
+        </div>
 
-      <div class="form-group">
-        <label>Exercício</label>
-        <select id="exercicio">
-          <option value="">-- Selecione --</option>
+        <div class="form-group">
+          <label>Exercício</label>
+          <select id="exercicio">
+            <option value="">-- Selecione --</option>
 
-          <!-- PEITO -->
-          <optgroup label="Peito">
-            <option>Supino Reto</option>
-            <option>Supino Inclinado</option>
-            <option>Supino Declinado</option>
-            <option>Crucifixo Reto</option>
-            <option>Crucifixo Inclinado</option>
-            <option>Peck Deck</option>
-            <option>Cross Over</option>
-          </optgroup>
+            <!-- PEITO -->
+            <optgroup label="Peito">
+              <option>Supino Reto</option>
+              <option>Supino Inclinado</option>
+              <option>Supino Declinado</option>
+              <option>Crucifixo Reto</option>
+              <option>Crucifixo Inclinado</option>
+              <option>Peck Deck</option>
+              <option>Cross Over</option>
+            </optgroup>
 
-          <!-- COSTAS -->
-          <optgroup label="Costas">
-            <option>Puxada Aberta Frente</option>
-            <option>Puxada Fechada</option>
-            <option>Puxada Atrás</option>
-            <option>Remada Curvada</option>
-            <option>Remada Baixa</option>
-            <option>Remada Unilateral</option>
-            <option>Levantamento Terra</option>
-            <option>Pull Over</option>
-          </optgroup>
+            <!-- COSTAS -->
+            <optgroup label="Costas">
+              <option>Puxada Aberta Frente</option>
+              <option>Puxada Fechada</option>
+              <option>Puxada Atrás</option>
+              <option>Remada Curvada</option>
+              <option>Remada Baixa</option>
+              <option>Remada Unilateral</option>
+              <option>Levantamento Terra</option>
+              <option>Pull Over</option>
+            </optgroup>
 
-          <!-- OMBRO -->
-          <optgroup label="Ombro">
-            <option>Desenvolvimento com Barra</option>
-            <option>Desenvolvimento com Halteres</option>
-            <option>Elevação Lateral</option>
-            <option>Elevação Frontal</option>
-            <option>Encolhimento de Ombros</option>
-            <option>Remada Alta</option>
-          </optgroup>
+            <!-- OMBRO -->
+            <optgroup label="Ombro">
+              <option>Desenvolvimento com Barra</option>
+              <option>Desenvolvimento com Halteres</option>
+              <option>Elevação Lateral</option>
+              <option>Elevação Frontal</option>
+              <option>Encolhimento de Ombros</option>
+              <option>Remada Alta</option>
+            </optgroup>
 
-          <!-- PERNAS -->
-          <optgroup label="Pernas">
-            <option>Agachamento Livre</option>
-            <option>Agachamento Smith</option>
-            <option>Leg Press</option>
-            <option>Avanço</option>
-            <option>Passada</option>
-            <option>Cadeira Extensora</option>
-            <option>Cadeira Flexora</option>
-            <option>Mesa Flexora</option>
-            <option>Cadeira Abdutora</option>
-            <option>Cadeira Adutora</option>
-            <option>Stiff</option>
-            <option>Levantamento Terra Romeno</option>
-            <option>Panturrilha Sentado</option>
-            <option>Panturrilha em Pé</option>
-          </optgroup>
+            <!-- PERNAS -->
+            <optgroup label="Pernas">
+              <option>Agachamento Livre</option>
+              <option>Agachamento Smith</option>
+              <option>Leg Press</option>
+              <option>Avanço</option>
+              <option>Passada</option>
+              <option>Cadeira Extensora</option>
+              <option>Cadeira Flexora</option>
+              <option>Mesa Flexora</option>
+              <option>Cadeira Abdutora</option>
+              <option>Cadeira Adutora</option>
+              <option>Stiff</option>
+              <option>Levantamento Terra Romeno</option>
+              <option>Panturrilha Sentado</option>
+              <option>Panturrilha em Pé</option>
+            </optgroup>
 
-          <!-- BÍCEPS -->
-          <optgroup label="Bíceps">
-            <option>Rosca Direta</option>
-            <option>Rosca Alternada</option>
-            <option>Rosca Martelo</option>
-            <option>Rosca Concentrada</option>
-            <option>Rosca Scott</option>
-          </optgroup>
+            <!-- BÍCEPS -->
+            <optgroup label="Bíceps">
+              <option>Rosca Direta</option>
+              <option>Rosca Alternada</option>
+              <option>Rosca Martelo</option>
+              <option>Rosca Concentrada</option>
+              <option>Rosca Scott</option>
+            </optgroup>
 
-          <!-- TRÍCEPS -->
-          <optgroup label="Tríceps">
-            <option>Tríceps Corda</option>
-            <option>Tríceps Testa</option>
-            <option>Tríceps Francês</option>
-            <option>Mergulho</option>
-            <option>Tríceps Banco</option>
-          </optgroup>
+            <!-- TRÍCEPS -->
+            <optgroup label="Tríceps">
+              <option>Tríceps Corda</option>
+              <option>Tríceps Testa</option>
+              <option>Tríceps Francês</option>
+              <option>Mergulho</option>
+              <option>Tríceps Banco</option>
+            </optgroup>
 
-          <!-- ABDÔMEN -->
-          <optgroup label="Abdômen">
-            <option>Abdominal Supra</option>
-            <option>Abdominal Infra</option>
-            <option>Abdominal Oblíquo</option>
-            <option>Prancha</option>
-            <option>Elevação de Pernas</option>
-            <option>Ab Wheel</option>
-          </optgroup>
+            <!-- ABDÔMEN -->
+            <optgroup label="Abdômen">
+              <option>Abdominal Supra</option>
+              <option>Abdominal Infra</option>
+              <option>Abdominal Oblíquo</option>
+              <option>Prancha</option>
+              <option>Elevação de Pernas</option>
+              <option>Ab Wheel</option>
+            </optgroup>
 
-        </select>
-      </div>
+          </select>
+        </div>
 
-      <div class="form-group">
-        <label>Séries</label>
-        <input type="number" id="series" value="3">
-      </div>
+        <div class="form-group">
+          <label>Séries</label>
+          <input type="number" id="series" value="3">
+        </div>
 
-      <div class="form-group">
-        <label>Repetições</label>
-        <input type="number" id="repeticoes" value="12">
-      </div>
+        <div class="form-group">
+          <label>Repetições</label>
+          <input type="number" id="repeticoes" value="12">
+        </div>
 
-      <button type="submit" class="btn full">Adicionar</button>
+        <button type="submit" class="btn full">Adicionar</button>
 
-    </form>
+      </form>
+    </div>
+
+    <div id="treinos"></div>
+
+    <button id="btnPDF" class="btn btn-center">Gerar PDF</button>
+
   </div>
 
-  <div id="treinos"></div>
+  <script>
+    const nomePersonal = localStorage.getItem('nomePersonal') || '';
+    document.getElementById('saudacao').innerText = nomePersonal ? `Olá, ${nomePersonal}!` : 'Olá!';
+  </script>
 
-<button id="btnPDF" class="btn btn-center">Gerar PDF</button>
-
-</div>
-
-<script>
-const nomePersonal = localStorage.getItem('nomePersonal') || '';
-document.getElementById('saudacao').innerText = nomePersonal ? `Olá, ${nomePersonal}!` : 'Olá!';
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
-<script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>

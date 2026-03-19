@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: Arial;
+  padding-top: 70px;
 
   background:
     linear-gradient(rgba(49, 50, 56, 0.241), rgba(49, 50, 56, 0.847)),
@@ -15,6 +16,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: start; /* mantém alinhamento à esquerda */
+  align-items: flex-start; /* mantém a imagem no topo */
+  padding: 20px;
+
+  position: fixed; /* deixa fixo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* garante que fique acima do restante do conteúdo */
+
+  /* efeito degradê do preto transparente para preto mais escuro */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.019), rgba(0, 0, 0, 0.717));
+}
+
+img.logo {
+  height: 30px;
+  margin-left: 50px;
 }
 
 h1 {
